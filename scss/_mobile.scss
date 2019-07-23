@@ -1,0 +1,115 @@
+// Widescreens
+
+@include mediaXl {
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  body {
+    max-width: 2600px;
+  }
+}
+
+// Desktop & laptop
+@include mediaLg {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  //   .inner-info {
+  //     clip-path: circle(25px at 30px 30px);
+  //     i {
+  //       left: 3%;
+  //     }
+  //   }
+}
+
+// Tablets & Small Laptops
+@include mediaMd {
+  // .inner-info {
+  //   clip-path: circle(25px at 30px 30px);
+  //   i {
+  //     left: 3%;
+  //   }
+  // }
+
+  section {
+    align-items: center;
+    text-align: center;
+
+    .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem;
+
+      //   & > span {
+      //     width: 100%;
+      //   }
+    }
+  }
+
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+
+    .nav-link {
+      font-size: 24px;
+    }
+  }
+
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0);
+
+    .portrait {
+      background: url("../img/portrait_small.jpg");
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  .about-info {
+    grid-template-areas:
+      "bioimage"
+      "bio"
+      "job1"
+      "job2"
+      "job3";
+
+    grid-template-columns: 1fr;
+  }
+
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Smartphones
+@include mediaSm {
+  section#home h1 {
+    margin-top: 10vh;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .info1,
+  .info2 {
+    display: none;
+  }
+  .menu-btn {
+    right: 15px;
+    top: 15px;
+    background: #fff;
+    padding: 5px 5px 0;
+  }
+}
